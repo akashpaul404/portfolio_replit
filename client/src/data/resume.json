@@ -1,0 +1,31 @@
+{
+  "name": "Akash Paul",
+  "title": "Full Stack Developer",
+  "contact": {
+    "email": "akash.paul8080@gmail.com",
+    "phone": "+91 8327320609",
+    "location": "Bangalore, India"
+  },
+  "achievements": [
+    "Reduced query response time by 40% via efficient Go services",
+    "Delivered full meetup registration + grouping automation backend",
+    "Implemented robust database migration and seeding system",
+    "Built scalable microservices architecture with Go",
+    "Created interactive frontend applications with modern frameworks"
+  ],
+  "experience": [
+    {
+      "title": "Full Stack Developer",
+      "period": "November 2024 - Present",
+      "description": "Building scalable web applications with Go, PostgreSQL, and modern frontend frameworks. Specialized in backend architecture and API development."
+    }
+  ],
+  "skillMetrics": [
+    { "skill": "Go/Golang", "level": 85 },
+    { "skill": "PostgreSQL", "level": 80 },
+    { "skill": "Svelte", "level": 75 },
+    { "skill": "React", "level": 70 },
+    { "skill": "Docker", "level": 65 },
+    { "skill": "GraphQL", "level": 70 }
+  ]
+}

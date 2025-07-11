@@ -1,0 +1,43 @@
+{
+  "name": "Akash Paul",
+  "location": "Bangalore",
+  "contact": {
+    "email": "akash.paul8080@gmail.com",
+    "phone": "+91 8327320609"
+  },
+  "bio": "I'm Akash Paul, a passionate Full Stack Developer based in Bangalore. Started my journey as a MERN developer in November 2024, but quickly discovered my love for backend development with Go and system architecture.",
+  "timeline": [
+    {
+      "date": "2024-11",
+      "event": "Started as MERN Stack Developer",
+      "description": "Diving into full-stack development"
+    },
+    {
+      "date": "2025-01",
+      "event": "Transitioned to Go Backend Development",
+      "description": "Discovered passion for systems programming"
+    },
+    {
+      "date": "2025-03",
+      "event": "Built Tour Module & Meetup Grouping System",
+      "description": "Advanced backend architecture"
+    },
+    {
+      "date": "2025-07",
+      "event": "Time Slot Fix & Migration Automation",
+      "description": "Database optimization and automation"
+    }
+  ],
+  "skills": [
+    "Go",
+    "PostgreSQL",
+    "Svelte",
+    "Docker",
+    "Hasura",
+    "GraphQL",
+    "React",
+    "Node.js",
+    "Gin",
+    "REST APIs"
+  ]
+}

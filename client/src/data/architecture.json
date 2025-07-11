@@ -1,0 +1,28 @@
+{
+  "title": "System Architecture",
+  "description": "Implementing clean architecture principles with Go, featuring layered separation of concerns, dependency injection, and robust error handling patterns.",
+  "layers": [
+    "Controllers (HTTP Layer)",
+    "Services (Business Logic)",
+    "Repository (Data Access)",
+    "Models (Entity Definitions)",
+    "Database (PostgreSQL)"
+  ],
+  "codeSnippets": [
+    {
+      "title": "API Routes",
+      "language": "go",
+      "code": "// Route definitions\nr.GET(\"/api/projects\", controllers.GetProjects)\nr.POST(\"/api/groups\", controllers.CreateGroup)\nr.PUT(\"/api/users/:id\", controllers.UpdateUser)\n// JSON responses with proper error handling"
+    },
+    {
+      "title": "Database Schema",
+      "language": "sql",
+      "code": "-- Users table structure\nCREATE TABLE users (\n    id SERIAL PRIMARY KEY,\n    email VARCHAR(255) UNIQUE,\n    created_at TIMESTAMP DEFAULT NOW()\n);"
+    },
+    {
+      "title": "Service Layer",
+      "language": "go",
+      "code": "func (s *UserService) CreateUser(ctx context.Context, req CreateUserRequest) (*User, error) {\n    // Validate input\n    if err := s.validator.Validate(req); err != nil {\n        return nil, err\n    }\n    \n    // Business logic\n    user := &User{\n        Email: req.Email,\n        CreatedAt: time.Now(),\n    }\n    \n    // Persist to database\n    return s.repository.Create(ctx, user)\n}"
+    }
+  ]
+}
