@@ -72,6 +72,23 @@
   /* Cyber theme colors (futuristic) */
   --background: hsl(240, 10%, 3.9%);
   --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(184, 100%, 50%);
+  --primary-foreground: hsl(240, 10%, 3.9%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(184, 100%, 50%);
   --cyber-primary: hsl(240, 10%, 4%);
   --cyber-secondary: hsl(240, 15%, 11%);
   --cyber-accent: hsl(184, 100%, 50%);
@@ -162,5 +179,41 @@
   
   .animate-fade-in {
     animation: fadeIn 0.8s ease-out;
+  }
+
+  /* Form input fixes for all themes */
+  .light input, .light textarea, .light select {
+    background-color: white !important;
+    color: #1f2937 !important;
+    border-color: #d1d5db !important;
+  }
+
+  .light input::placeholder, .light textarea::placeholder {
+    color: #9ca3af !important;
+  }
+
+  .dark input, .dark textarea, .dark select {
+    background-color: hsl(240, 10%, 8%) !important;
+    color: hsl(0, 0%, 98%) !important;
+    border-color: hsl(240, 3.7%, 15.9%) !important;
+  }
+
+  .dark input::placeholder, .dark textarea::placeholder {
+    color: hsl(240, 5%, 64.9%) !important;
+  }
+
+  .cyber input, .cyber textarea, .cyber select {
+    background-color: var(--cyber-secondary) !important;
+    color: var(--cyber-text) !important;
+    border-color: rgba(0, 245, 255, 0.3) !important;
+  }
+
+  .cyber input::placeholder, .cyber textarea::placeholder {
+    color: rgba(255, 255, 255, 0.5) !important;
+  }
+
+  .cyber input:focus, .cyber textarea:focus, .cyber select:focus {
+    border-color: var(--cyber-accent) !important;
+    box-shadow: 0 0 0 2px rgba(0, 245, 255, 0.2) !important;
   }
 }
