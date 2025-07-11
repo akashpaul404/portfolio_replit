@@ -1,0 +1,167 @@
+
+🔮 Futuristic Dynamic Portfolio Prompt for Akash Paul
+🎯 Objective:
+Create a multi-page, futuristic-themed, responsive portfolio website for Akash Paul, showcasing real-world project experiences, backend system designs, frontend implementations, and database schemas with interactive and modular layouts.
+
+🌐 Tech Stack
+Frontend: Svelte / SvelteKit + Tailwind CSS + Framer Motion (or Three.js for advanced UI)
+
+Backend: Go (Golang) – REST APIs
+
+Database: PostgreSQL (pgx driver)
+
+API Middleware: Gin + layered architecture (controllers, services, repository)
+
+Data Handling: JSON-based endpoints to feed frontend (decoupled content)
+
+Optional: Markdown rendering, syntax highlighting for code, Draw.io embedded diagrams
+
+📁 Folder Structure
+pgsql
+Copy
+Edit
+/portfolio-akash
+├── backend/
+│   └── main.go
+│   └── controllers/
+│   └── services/
+│   └── repository/
+│   └── models/
+│   └── routes/
+├── database/
+│   └── schema.sql
+│   └── seed_data.sql
+├── frontend/
+│   └── routes/
+│   └── components/
+│   └── stores/
+│   └── styles/
+│   └── data/   ← JSON data files
+└── public/
+🧠 Data-Driven UI (All via JSON APIs or Static JSONs)
+Each section of the UI pulls data from /data/*.json or API routes such as /api/projects.
+
+📄 Pages and Features
+1. Homepage – /
+Hero Banner: Animated with your name, tagline, tech highlights
+
+Quick Stats:
+
+📍 Location: Bangalore
+
+🛠️ Years of Experience: From Nov 2024
+
+🔄 Stack: Go, Svelte, GraphQL, PostgreSQL, Docker, Hasura
+
+2. About Me – /about
+Personal background
+
+Professional growth timeline
+
+Technologies learned (auto-fetched JSON)
+
+Interactive timeline showing:
+
+Nov 2024: Joined as MERN Dev
+
+Jan 2025: Shifted to Go backend
+
+Mar 2025: Built Tour Module, Brew Class, Meetup Grouping
+
+json
+Copy
+Edit
+// about.json
+{
+  "name": "Akash Paul",
+  "location": "Bangalore",
+  "contact": {
+    "email": "akash.paul8080@gmail.com",
+    "phone": "8327320609"
+  },
+  "timeline": [
+    {"date": "2024-11", "event": "Joined as MERN Dev"},
+    {"date": "2025-01", "event": "Backend with Go"},
+    {"date": "2025-04", "event": "Grouping System with Cron"},
+    {"date": "2025-07", "event": "Time Slot Fix & Migration Automation"}
+  ]
+}
+3. Projects – /projects
+Each card fetched dynamically from projects.json
+
+json
+Copy
+Edit
+{
+  "projects": [
+    {
+      "title": "Meetup Grouping Algorithm",
+      "stack": ["Go", "PostgreSQL", "Gin"],
+      "description": "Dynamic user grouping with priority relaxation, scoring, and scheduled cron execution.",
+      "backend_focus": true
+    },
+    {
+      "title": "Tour Module",
+      "stack": ["Svelte", "GraphQL", "Hasura"],
+      "description": "Interactive tour listings with live/upcoming/completed views and role-based access.",
+      "frontend_focus": true
+    }
+  ]
+}
+Filtering by Tech
+
+Category tabs: Backend | Frontend | Fullstack | Database | Automation
+
+4. Architecture – /architecture
+Diagrams embedded (Draw.io XML or PNG)
+
+System design write-ups
+
+Code snippets with syntax highlight (fetched from /data/snippets/)
+
+5. Resume – /resume
+Downloadable PDF version
+
+JSON view with skill tags, metrics, and achievements
+
+json
+Copy
+Edit
+{
+  "skills": ["Go", "PostgreSQL", "Hasura", "Svelte", "Docker"],
+  "achievements": [
+    "Reduced query response time by 40% via efficient Go services",
+    "Delivered a full meetup registration + grouping automation backend"
+  ]
+}
+6. APIs – /api-docs
+Swagger-like auto-generated Go documentation (optional)
+
+Showcase of layered backend patterns with JSON examples
+
+7. Contact – /contact
+Form to email you (via Nodemailer/Netlify Forms)
+
+QR Code for mobile users
+
+Location map: Bangalore
+
+💾 Backend API Sample
+go
+Copy
+Edit
+r.GET("/api/projects", controllers.GetProjects) // returns []Project as JSON
+
+// Controller
+func GetProjects(c *gin.Context) {
+   data := services.FetchAllProjects()
+   c.JSON(http.StatusOK, data)
+}
+🧪 Optional Enhancements
+Theme toggle (dark/light/futuristic mode)
+
+3D hero with Three.js (starfield, orbiting satellites)
+
+CLI-style landing terminal (> akash -show projects)
+
+Code copy buttons + interactive DB schema viewer
