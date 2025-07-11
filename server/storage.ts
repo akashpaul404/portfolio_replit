@@ -113,7 +113,11 @@ export class MemStorage implements IStorage {
     const project: Project = { 
       ...insertProject, 
       id, 
-      createdAt: new Date()
+      createdAt: new Date(),
+      image: insertProject.image || null,
+      githubUrl: insertProject.githubUrl || null,
+      demoUrl: insertProject.demoUrl || null,
+      featured: insertProject.featured || false
     };
     this.projects.set(id, project);
     return project;

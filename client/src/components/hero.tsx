@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Download, Code, Database, Zap } from "lucide-react";
+import ThreeHero from "@/components/three-hero";
 
 export default function Hero() {
   const scrollToProjects = () => {
@@ -11,9 +12,12 @@ export default function Hero() {
 
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden tech-grid">
+      {/* 3D Background Effect */}
+      <ThreeHero />
+      
       {/* Background Effect */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-cyber-primary via-cyber-secondary to-cyber-primary opacity-80"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-cyber-primary via-cyber-secondary to-cyber-primary opacity-60"></div>
       </div>
       
       <div className="relative z-10 text-center px-4 animate-fade-in">

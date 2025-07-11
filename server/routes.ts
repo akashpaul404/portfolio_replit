@@ -1,7 +1,7 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
-import { storage } from "./storage";
-import { insertContactSchema } from "@shared/schema";
+import { storage } from "./database";
+import { insertContactSchema, insertProjectSchema } from "@shared/schema";
 import { z } from "zod";
 
 export async function registerRoutes(app: Express): Promise<Server> {
@@ -37,6 +37,21 @@ export async function registerRoutes(app: Express): Promise<Server> {
         res.status(400).json({ error: "Invalid contact data", details: error.errors });
       } else {
         res.status(500).json({ error: "Failed to create contact" });
+      }
+    }
+  });
+
+  // Create project (admin endpoint)
+  app.post("/api/projects", async (req, res) => {
+    try {
+      const validatedData = insertProjectSchema.parse(req.body);
+      const project = await storage.createProject(validatedData);
+      res.status(201).json(project);
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        res.status(400).json({ error: "Invalid project data", details: error.errors });
+      } else {
+        res.status(500).json({ error: "Failed to create project" });
       }
     }
   });

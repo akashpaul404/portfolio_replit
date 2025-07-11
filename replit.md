@@ -24,7 +24,7 @@ Preferred communication style: Simple, everyday language.
 - **Database**: PostgreSQL with Drizzle ORM
 - **Database Provider**: Neon Database (serverless PostgreSQL)
 - **API Design**: RESTful endpoints with JSON responses
-- **Data Storage**: In-memory storage with seeded data (development mode)
+- **Data Storage**: PostgreSQL database with Neon hosting (production mode) and in-memory fallback (development mode)
 
 ### Database Schema
 The application uses a simple relational schema with three main tables:
@@ -43,26 +43,31 @@ The application uses a simple relational schema with three main tables:
 - **Contact**: Contact form with validation
 
 ### UI Components
-- **Navigation**: Fixed header with responsive mobile menu
+- **Navigation**: Fixed header with responsive mobile menu and theme toggle
 - **Project Cards**: Interactive project displays with hover effects
 - **Timeline**: Career progression visualization
 - **Contact Form**: Validated form with toast notifications
+- **Terminal Interface**: CLI-style interactive portfolio navigator
+- **3D Hero Animation**: Canvas-based particle system with perspective effects
 - **Footer**: Site links and branding
 
 ### Design System
-- **Theme**: Cyber/futuristic aesthetic with custom CSS variables
+- **Theme**: Multi-mode theme system (Light/Dark/Cyber) with dynamic switching
 - **Typography**: Orbitron for headings, JetBrains Mono for code
-- **Colors**: Cyan, purple, and green accent colors on dark background
-- **Animations**: CSS transitions and hover effects
+- **Colors**: Adaptive color scheme with cyber accents (cyan, purple, green)
+- **Animations**: CSS transitions, hover effects, and canvas-based 3D particle system
 
 ## Data Flow
 
 1. **Client-Side Routing**: Wouter handles navigation between pages
 2. **Data Fetching**: TanStack Query manages API calls and caching
 3. **API Layer**: Express.js serves REST endpoints from `/api/*`
-4. **Data Storage**: In-memory storage with seed data for development
+4. **Data Storage**: PostgreSQL database with automated seeding and migrations
 5. **Form Handling**: React Hook Form with Zod validation
 6. **State Management**: Query client handles server state, local state for UI
+7. **Theme System**: Dynamic theme switching (Light/Dark/Cyber modes)
+8. **Interactive Features**: Terminal interface for portfolio navigation
+9. **3D Effects**: Canvas-based particle animation system
 
 ## External Dependencies
 

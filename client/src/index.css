@@ -23,15 +23,18 @@
   --destructive-foreground: hsl(60, 9.1%, 97.8%);
   --ring: hsl(20, 14.3%, 4.1%);
   --radius: 0.5rem;
+}
 
-  /* Cyber theme colors */
-  --cyber-primary: hsl(240, 10%, 4%);
-  --cyber-secondary: hsl(240, 15%, 11%);
-  --cyber-accent: hsl(184, 100%, 50%);
-  --cyber-purple: hsl(258, 84%, 70%);
-  --cyber-green: hsl(158, 64%, 52%);
-  --cyber-text: hsl(0, 0%, 98%);
-  --cyber-muted: hsl(240, 5%, 64%);
+.light {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(20, 14.3%, 4.1%);
+  --cyber-primary: hsl(0, 0%, 98%);
+  --cyber-secondary: hsl(0, 0%, 94%);
+  --cyber-accent: hsl(207, 90%, 54%);
+  --cyber-purple: hsl(258, 84%, 50%);
+  --cyber-green: hsl(158, 64%, 42%);
+  --cyber-text: hsl(20, 14.3%, 4.1%);
+  --cyber-muted: hsl(25, 5.3%, 44.7%);
 }
 
 .dark {
@@ -55,6 +58,27 @@
   --destructive-foreground: hsl(0, 0%, 98%);
   --ring: hsl(240, 4.9%, 83.9%);
   --radius: 0.5rem;
+  /* Dark theme colors */
+  --cyber-primary: hsl(240, 10%, 8%);
+  --cyber-secondary: hsl(240, 10%, 15%);
+  --cyber-accent: hsl(258, 84%, 70%);
+  --cyber-purple: hsl(258, 84%, 70%);
+  --cyber-green: hsl(158, 64%, 52%);
+  --cyber-text: hsl(0, 0%, 98%);
+  --cyber-muted: hsl(240, 5%, 64%);
+}
+
+.cyber {
+  /* Cyber theme colors (futuristic) */
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --cyber-primary: hsl(240, 10%, 4%);
+  --cyber-secondary: hsl(240, 15%, 11%);
+  --cyber-accent: hsl(184, 100%, 50%);
+  --cyber-purple: hsl(258, 84%, 70%);
+  --cyber-green: hsl(158, 64%, 52%);
+  --cyber-text: hsl(0, 0%, 98%);
+  --cyber-muted: hsl(240, 5%, 64%);
 }
 
 @layer base {
