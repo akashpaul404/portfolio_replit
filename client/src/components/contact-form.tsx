@@ -36,12 +36,12 @@ export default function ContactForm() {
 
   const contactMutation = useMutation({
     mutationFn: async (data: ContactFormData) => {
-      const response = await apiRequest("POST", "/api/contacts", data);
+      const response = await apiRequest("POST", "/api/send-email", data);
       return response.json();
     },
     onSuccess: () => {
       toast({
-        title: "Message sent successfully! 🚀",
+        title: "Message sent successfully!",
         description: "Thank you for your message. I'll get back to you soon.",
       });
       form.reset();
@@ -49,7 +49,7 @@ export default function ContactForm() {
     onError: (error) => {
       toast({
         title: "Error sending message",
-        description: "Please try again later or contact me directly.",
+        description: "Please try again later or contact me directly at akash.paul8080@gmail.com",
         variant: "destructive",
       });
     },
@@ -111,7 +111,7 @@ export default function ContactForm() {
           <Label className="text-sm font-medium mb-2 block" style={{ color: 'var(--cyber-accent)' }}>
             Subject *
           </Label>
-          <Select {...form.register("subject")} onValueChange={(value) => form.setValue("subject", value)}>
+          <Select onValueChange={(value) => form.setValue("subject", value)}>
             <SelectTrigger className="bg-white dark:bg-zinc-900 cyber:bg-cyber-secondary 
                                      text-gray-900 dark:text-white cyber:text-white 
                                      border border-gray-300 dark:border-zinc-700 cyber:border-cyber-accent/30 

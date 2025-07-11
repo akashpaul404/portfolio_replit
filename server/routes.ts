@@ -41,6 +41,37 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Send email endpoint
+  app.post("/api/send-email", async (req, res) => {
+    try {
+      const data = insertContactSchema.parse(req.body);
+      
+      // Log the contact form submission for now
+      // In production, you would integrate with SendGrid or similar service
+      console.log('📧 New contact form submission:');
+      console.log(`From: ${data.name} <${data.email}>`);
+      console.log(`Subject: ${data.subject}`);
+      console.log(`Message: ${data.message}`);
+      console.log(`To: akash.paul8080@gmail.com`);
+      console.log('---');
+      
+      // Simulate email sending delay
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      
+      res.status(200).json({ 
+        success: true, 
+        message: "Message logged for akash.paul8080@gmail.com" 
+      });
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        res.status(400).json({ error: "Validation error", details: error.errors });
+      } else {
+        console.error('Error processing email:', error);
+        res.status(500).json({ error: "Failed to process email" });
+      }
+    }
+  });
+
   // Create project (admin endpoint)
   app.post("/api/projects", async (req, res) => {
     try {
