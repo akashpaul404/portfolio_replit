@@ -56,6 +56,7 @@ export class DatabaseStorage implements IStorage {
 }
 
 // Create storage instance based on environment
+import { MemStorage } from "./storage";
 export const storage = process.env.DATABASE_URL 
   ? new DatabaseStorage()
-  : new (await import("./storage")).MemStorage();
+  : new MemStorage();
